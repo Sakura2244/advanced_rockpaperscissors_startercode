@@ -1,1 +1,16 @@
-
+.row {
+        border: 2px solid black;
+        height: 200px;
+}
+img{
+    width:100px;
+    height:100px;
+}
+#right{
+    border-right: 1px solid black;
+    height: 200px;
+}
+#left{
+    border-left: 1px solid black;
+    height: 200px;
+}
