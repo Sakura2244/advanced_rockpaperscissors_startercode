@@ -27,4 +27,25 @@
 
 
 // DOCUMENT READY FUNCTION
-
+$(document).ready(function(){
+        
+        var computerChoice="";
+        var winner="";
+        var choices=["rock", "paper", "scissors"];
+        $("button").click(function(){ 
+                var userChoice=$("input").val();
+                if (userChoice === "rock"){
+                        $("#userChoice").html('<img src= "images/rock.png"/>');
+                }else if (userChoice === "paper"){
+                        $("#userChoice").html('<img src= "images/paper.png"/>');
+                }else {
+                        $("#userChoice").html('<img src= "images/scissor.png"/>');
+                }
+                
+        });
+    
+    
+        
+    
+});
+ 
