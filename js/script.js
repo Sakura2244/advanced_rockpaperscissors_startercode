@@ -29,23 +29,71 @@
 // DOCUMENT READY FUNCTION
 $(document).ready(function(){
         
-        var computerChoice="";
-        var winner="";
-        var choices=["rock", "paper", "scissors"];
+        $("input").keyup(function(event){
+                if (event.keyCode === 13){
+                        $("button").click();
+                }
+        });
+        
         $("button").click(function(){ 
-                var userChoice=$("input").val();
-                if (userChoice === "rock"){
+                var userChoice=$("input").val().toLowerCase();
+                var choices=["rock", "paper", "scissor"];
+                if (userChoice === choices[0]){
                         $("#userChoice").html('<img src= "images/rock.png"/>');
-                }else if (userChoice === "paper"){
+                }else if (userChoice === choices[1]){
                         $("#userChoice").html('<img src= "images/paper.png"/>');
-                }else {
+                }else if (userChoice === choices[2]){
                         $("#userChoice").html('<img src= "images/scissor.png"/>');
+                }else{
+                        $("#userChoice").html("Choose rock, paper, or scissor");
                 }
                 
+                var computerChoice = [
+                        '<img src= "images/rock.png"/>',
+                        '<img src= "images/paper.png"/>',
+                        '<img src= "images/scissor.png"/>'
+                ];
+                if(choices.includes(userChoice)){
+                        var x = Math.ceil(Math.random()*15);
+                        if (x <=5){
+                                $("#computerChoice").html(computerChoice[0]);
+                        }else if (x <=10){
+                                $("#computerChoice").html(computerChoice[1]);
+                        }else if (x <=15){
+                                $("#computerChoice").html(computerChoice[2]);
+                        }else{
+                                $("#computerChoice").html("Choose rock, paper, or scissor");
+                        }
+                } 
+                var winner=["TIE","You WON","You LOSE"];
+                if(userChoice === choices[0]){
+                        if(x <= 5){
+                                $("#result").html(winner[0]);
+                        }else if(x <= 10){
+                                $("#result").html(winner[2]);
+                        }else if(x <= 15){
+                                $("#result").html(winner[1]);
+                        }
+                }
+                if(userChoice === choices[1]){
+                        if(x <= 5){
+                                $("#result").html(winner[1]);
+                        }else if(x <= 10){
+                                $("#result").html(winner[0]);
+                        }else if(x <= 15){
+                                $("#result").html(winner[2]);
+                        }
+                }
+                if(userChoice === choices[2]){
+                        if(x <= 5){
+                                $("#result").html(winner[2]);
+                        }else if(x <= 10){
+                                $("#result").html(winner[1]);
+                        }else if(x <= 15){
+                                $("#result").html(winner[0]);
+                        }
+                }
+                $("input").val("");
         });
-    
-    
-        
-    
 });
  
