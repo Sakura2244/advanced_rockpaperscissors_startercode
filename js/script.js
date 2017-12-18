@@ -49,9 +49,9 @@ $(document).ready(function(){
                 }
                 
                 var computerChoice = [
-                        '<img src= "images/rock.png"/>',
-                        '<img src= "images/paper.png"/>',
-                        '<img src= "images/scissor.png"/>'
+                        '<img src="images/rock.png"/>',
+                        '<img src="images/paper.png"/>',
+                        '<img src="images/scissor.png"/>'
                 ];
                 if(choices.includes(userChoice)){
                         var x = Math.ceil(Math.random()*15);

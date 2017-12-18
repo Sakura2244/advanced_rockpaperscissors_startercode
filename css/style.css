@@ -1,3 +1,4 @@
+
 .row{
      border: 2px solid black;
      height: 200px;
@@ -9,8 +10,16 @@ img{
 #player{
     border-right: 1px solid black;
     height: 200px;
+    background-color: #f4e0ff;
 }
 #computer{
     border-left: 1px solid black;
     height: 200px;
+    background-color: #f4e0ff;
+}
+.font{
+    font-family: 'Iceland', cursive;
+}
+#result{
+    font-size:40px;
 }
